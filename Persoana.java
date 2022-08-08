@@ -10,9 +10,27 @@ public class Persoana implements Comparable<Persoana> {
     }
 
     @Override
-    public int compareTo(Persoana persoana) {
-        return persoana.age;
-    }
+      public int compareTo(Persoana otherPersoana) {
+
+
+        if (age > otherPersoana.age) {
+            return 1;
+        }
+        if (age < otherPersoana.age) {
+            return -1;
+        }
+        int compareInt = name.compareTo(otherPersoana.name);
+        if (compareInt<0) return -1;
+        if (compareInt>0) return 1;
+        return 0;
 
     }
+
+    @Override
+    public String toString() {
+        return "\nPersoana:" +
+                "\nNume=" + name + '\'' +
+                "\nVarsta=" + age ;
+    }
+}
 
